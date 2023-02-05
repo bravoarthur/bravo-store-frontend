@@ -54,21 +54,25 @@ nav {
         margin-left: 20px;
         margin-right: 20px;
 
-        a {
+        a, button {
+            border: 0;
+            background: none;
             color: #000;
             font-size: 14px;
+            cursor: pointer;
+            outline: 0;
 
             &:hover {
                 color: #999;
             }
 
-            &.button {
+            &.sellButton {
                 background-color: #FF8100;
                 border-radius: 4px;
                 color: #FFF;
                 padding: 5px 10px
             }
-            &.button: hover {
+            &.sellButton: hover {
                 background-color: #E57706;
             }
         }

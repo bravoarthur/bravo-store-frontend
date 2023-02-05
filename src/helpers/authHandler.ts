@@ -5,3 +5,16 @@ export const isLogged = () => {
     return (token) ? true : false
 }
 
+export const doLogin = (token: string, rememberPass:boolean = false) => {
+
+    if(rememberPass) {
+        Cookies.set('token', token, {expires:999})
+    } else {
+        Cookies.set('token', token)
+    }
+}
+
+export const doLogout = () => {
+    Cookies.remove('token')
+}
+

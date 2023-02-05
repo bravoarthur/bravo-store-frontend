@@ -41,13 +41,12 @@ form {
                 
                 &:focus {
                     border: 1px solid #333;
-                    color: #333;
+                    border-color: #333;
                 }
             }
 
             .chkbox {
-                position: relative;
-                right: 135px
+                width: 5%;                 
             }
             
             button {
