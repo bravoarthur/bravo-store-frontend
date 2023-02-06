@@ -6,6 +6,8 @@ import { Template } from './components/MainComponent';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
 import SignIn from './pages/SignIn';
+import NotFound from './pages/NotFound';
+import SignUp from './pages/Signup';
 
 
 
@@ -20,7 +22,8 @@ function App() {
                 <Route path='/' element={<Home/>} />   
                 <Route path='/about' element={<About/>} /> 
                 <Route path='/signin' element={<SignIn/>} />
-                <Route element=""/>           
+                <Route path='/signup' element={<SignUp/>}/>
+                <Route path="*" element={<NotFound/>}/>           
 
             </Routes>
             <Footer/>

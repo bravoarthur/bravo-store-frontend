@@ -49,7 +49,7 @@ function Header() {
                                     <Link to="./signin">Sign In</Link>
                                 </li>
                                 <li>
-                                    <Link to="">Sign Up</Link>
+                                    <Link to="./signup">Sign Up</Link>
                                 </li>
                             </>
                         }

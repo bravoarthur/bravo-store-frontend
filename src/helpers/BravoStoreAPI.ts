@@ -5,6 +5,8 @@ type BodyType = {
     email?: string,
     password?: string,
     token?: string
+    name?: string,
+    state?: string,
 
 }
 
@@ -73,6 +75,21 @@ const BravoStoreAPI = {
         const json = await apiFetchPost('/user/signin', {email: email, password: password}) 
 
         return json
+
+    },
+
+    register: async (name: string, email: string, password: string, state: string) => {
+
+        const json = await apiFetchPost('/user/signup', {email: email, password: password, name: name, state: state}) 
+
+        return json
+
+    },
+
+    getStates: async () => {
+
+        const json = await apiFetchGet('/states', {})         
+        return json.states
 
     }
 }
