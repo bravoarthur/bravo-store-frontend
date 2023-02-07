@@ -60,7 +60,7 @@ function SignIn() {
             <SignArea>
                 {error.param && 
                 <ErrorMessage>
-                    {`${error.param} error - ${error.msg}`}
+                    {`Error - ${error.msg}`}
                 </ErrorMessage>
                 }
                 <form onSubmit={handleSubmit}>                

@@ -8,6 +8,7 @@ import Footer from './components/partials/Footer';
 import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
 import SignUp from './pages/Signup';
+import AdPage from './pages/AdPage';
 
 
 
@@ -23,7 +24,8 @@ function App() {
                 <Route path='/about' element={<About/>} /> 
                 <Route path='/signin' element={<SignIn/>} />
                 <Route path='/signup' element={<SignUp/>}/>
-                <Route path="*" element={<NotFound/>}/>           
+                <Route path='/ad/:id' element={<AdPage/>}/>
+                <Route path="*" element={<NotFound/>} />           
 
             </Routes>
             <Footer/>

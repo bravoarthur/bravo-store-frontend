@@ -39,8 +39,8 @@ function SignUp() {
 
     useEffect(() => {
         const getStates = async () => {
-            const slist = await api.getStates()
-            setStateList(slist as StateType[])
+            const slist:StateType[] = await api.getStates()
+            setStateList(slist)
 
         }
         getStates()
