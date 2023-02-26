@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn';
 import NotFound from './pages/NotFound';
 import SignUp from './pages/Signup';
 import AdPage from './pages/AdPage';
+import PrivateRouteHandler from './helpers/PrivateRouteHandler';
 
 
 
@@ -21,7 +22,7 @@ function App() {
             <Routes>
                 
                 <Route path='/' element={<Home/>} />   
-                <Route path='/about' element={<About/>} /> 
+                <Route path='/about' element={<About/>}/> 
                 <Route path='/signin' element={<SignIn/>} />
                 <Route path='/signup' element={<SignUp/>}/>
                 <Route path='/ad/:id' element={<AdPage/>}/>

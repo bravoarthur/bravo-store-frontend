@@ -7,6 +7,8 @@ type BodyType = {
     token?: string
     name?: string,
     state?: string,
+    id?: string,
+    other?: boolean
 
 }
 
@@ -108,7 +110,11 @@ const BravoStoreAPI = {
 
     },
 
-
+    getAd: async (id: string, otherAds=false) => {
+        const json = await apiFetchGet('/ad/item', {id: id, other: otherAds})
+        return json
+    }
+    
 }
 
 export default () => BravoStoreAPI
