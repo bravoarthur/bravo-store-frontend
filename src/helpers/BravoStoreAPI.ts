@@ -8,8 +8,7 @@ type BodyType = {
     name?: string,
     state?: string,
     id?: string,
-    other?: boolean
-
+    other?: boolean,    
 }
 
 const BASE_API = 'http://localhost:5000'
@@ -23,7 +22,7 @@ const apiFetchPost = async (endPoint: string, body: BodyType) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer${token}`
+            'Authorization': `Bearer ${token}`
         },
         //'x-access-token':
         body: JSON.stringify(body)
@@ -51,7 +50,7 @@ const apiFetchGet = async (endPoint: string, body: BodyType = {}) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer${token}`
+            'Authorization': `Bearer ${token}`
         },
         //'x-access-token':        
     })
@@ -67,6 +66,32 @@ const apiFetchGet = async (endPoint: string, body: BodyType = {}) => {
     return json
     
 }
+
+const apiFetchFile = async (endPoint: string, body: FormData) => {
+
+    let token = Cookies.get('token') 
+    
+    const res = await fetch(BASE_API+endPoint, {
+        method: 'POST',
+        headers: {            
+            'Authorization': `Bearer ${token}`
+        },
+        //'x-access-token':
+        body: body
+    })
+    
+    const json = await res.json()
+
+    /*if(json.notallowed) {
+        go to /signin
+    }
+    */
+    console.log(json)
+
+    return json
+    
+}
+
 
 
 
@@ -113,7 +138,12 @@ const BravoStoreAPI = {
     getAd: async (id: string, otherAds=false) => {
         const json = await apiFetchGet('/ad/item', {id: id, other: otherAds})
         return json
-    }
+    },
+
+    AddAd: async (fData: FormData) => {
+        const json = await apiFetchFile('/ad/add', fData)
+        return json
+    },
     
 }
 

@@ -36,7 +36,7 @@ function Header() {
                                     <button onClick={handleLogOut}>Logout</button>
                                 </li>   
                                 <li>
-                                    <Link to="" className="sellButton">Sell now!</Link>
+                                    <Link to="/post-an-ad" className="sellButton">Sell now!</Link>
                                 </li>
                             </>
                         

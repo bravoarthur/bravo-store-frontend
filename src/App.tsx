@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import SignUp from './pages/Signup';
 import AdPage from './pages/AdPage';
 import PrivateRouteHandler from './helpers/PrivateRouteHandler';
+import AddAd from './pages/AddAd';
 
 
 
@@ -26,6 +27,11 @@ function App() {
                 <Route path='/signin' element={<SignIn/>} />
                 <Route path='/signup' element={<SignUp/>}/>
                 <Route path='/ad/:id' element={<AdPage/>}/>
+                <Route path='/post-an-ad' element={
+                    <PrivateRouteHandler>
+                        <AddAd/>
+                    </PrivateRouteHandler>
+                }/>
                 <Route path="*" element={<NotFound/>} />           
 
             </Routes>

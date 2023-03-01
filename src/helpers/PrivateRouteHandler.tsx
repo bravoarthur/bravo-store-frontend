@@ -1,4 +1,4 @@
-import {Navigate, RouteProps, Route} from 'react-router-dom';
+import {Navigate, RouteProps} from 'react-router-dom';
 import { isLogged } from './authHandler';
   
 function PrivateRouteHandler({ children }: RouteProps) {
