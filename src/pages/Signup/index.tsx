@@ -5,11 +5,6 @@ import { doLogin } from "../../helpers/authHandler";
 import {useNavigate} from 'react-router-dom'
 import { SignUpArea } from "./styled";
 
-type JsonType = {
-    error?: any
-    email?: string,
-    token?: string,
-}
 
 type ErrorType = {
     param: string,
@@ -24,7 +19,7 @@ type StateType = {
 
 function SignUp() {
 
-    const api = useApi()
+    const api = useApi
     const navigate = useNavigate()
 
     const [name, setName] = useState('')

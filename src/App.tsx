@@ -11,6 +11,7 @@ import SignUp from './pages/Signup';
 import AdPage from './pages/AdPage';
 import PrivateRouteHandler from './helpers/PrivateRouteHandler';
 import AddAd from './pages/AddAd';
+import Ads from './pages/Ads';
 
 
 
@@ -32,6 +33,7 @@ function App() {
                         <AddAd/>
                     </PrivateRouteHandler>
                 }/>
+                <Route path='/ads' element={<Ads/>}/>
                 <Route path="*" element={<NotFound/>} />           
 
             </Routes>

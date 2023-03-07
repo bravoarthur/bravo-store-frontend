@@ -21,7 +21,7 @@ type CategoriesType = {
 
 function Home() {
 
-    const api = useApi()
+    const api = useApi
 
     const [stateList, setStateList] = useState([] as StateType[])
     const [categories, setCategories] = useState([] as CategoriesType[])

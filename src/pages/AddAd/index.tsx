@@ -6,11 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import MaskedInput from "react-text-mask";
 import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 
-type JsonType = {
-    error?: any
-    email?: string,
-    token?: string,
-}
 
 type ErrorType = {
     param: string,
@@ -27,7 +22,7 @@ type CatsType = {
 
 function AddAd() {
 
-    const api = useApi()
+    const api = useApi
     const history = useNavigate()
 
     const fileField = useRef<HTMLInputElement>(null)
@@ -46,13 +41,12 @@ function AddAd() {
         const getCats = async () => {
             const cats = await api.getCategories()
             if(cats.error) {
-                setError(cats.error)
+                setError({msg: cats.error, param: ''})
             }
             setCategories(cats)            
         }
         getCats()
-    }, [])
-
+    }, [api])
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
@@ -95,7 +89,7 @@ function AddAd() {
         const json = await api.AddAd(fData)
 
         if(json.error) {
-            setError(json.error)
+            setError({msg:json.error, param: ''})
             setDisabled(false)
             return
         }
@@ -120,7 +114,7 @@ function AddAd() {
 
             <PageTitle>Sell Now!</PageTitle>
             <SignArea>
-                {error.param && 
+                {error.msg && 
                 <ErrorMessage>
                     {`Error - ${error.msg}`}
                 </ErrorMessage>

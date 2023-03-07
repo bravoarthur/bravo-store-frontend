@@ -10,7 +10,7 @@ a {
     padding: 10px;
     border-radius: 5px;
     color: #555;
-    background-color: #;
+    background-color: #FFF;
     transition: all ease .2s;
 
     &:hover {

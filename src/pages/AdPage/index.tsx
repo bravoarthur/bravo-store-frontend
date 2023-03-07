@@ -5,8 +5,7 @@ import { AdArea, BreadCrumb, Fake, OthersArea  } from './styled';
 import {Link, useParams} from 'react-router-dom'
 import {Slide} from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import AdItem, { PropsType } from '../../components/partials/AdItem';
-import { userInfo } from 'os';
+import AdItem from '../../components/partials/AdItem';
 
 type OthersType = {
     id: string,
@@ -37,7 +36,7 @@ type AdType = {
 
 function AdPage() {
 
-    const api = useApi()
+    const api = useApi
     
     const { id } = useParams()
     

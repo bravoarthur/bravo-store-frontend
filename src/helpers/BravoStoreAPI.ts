@@ -147,4 +147,4 @@ const BravoStoreAPI = {
     
 }
 
-export default () => BravoStoreAPI
+export default BravoStoreAPI

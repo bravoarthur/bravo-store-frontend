@@ -20,6 +20,9 @@ a {
     text-decoration: underline;
     color: #000
 }
+@media(max-width: 600px) {
+    margin: 20px;
+}
 `
 
 export const AdArea = styled.div`
@@ -117,6 +120,55 @@ margin-top: 20px;
     }
 }
 
+@media(max-width: 600px) {
+
+    flex-direction: column;
+
+    .leftSide {
+        margin: 0;
+
+        .adImage {
+            margin: 0px;
+            height: 320px;
+            width: 320px;
+
+            .each-slide img {                
+                height: 320px 
+            }
+        }
+
+        .box {
+            width: 320px;
+            flex-direction: column;
+            margin: auto;
+            
+        }
+
+        .adInfo {
+            padding: 10px;
+        }
+
+    }
+
+    .rightSide {
+
+        width: auto;
+        margin-top: 20px;
+
+        .box {
+            width: 320px;
+            margin: auto;
+        }
+
+        .contactSeller {
+            width: 320px;
+            margin: 20px auto;
+        }
+
+    }
+    
+
+}
 `
 
 export const OthersArea = styled.div`
@@ -125,8 +177,16 @@ h2 {
 }
 .list {
     display: flex;
+    flex-wrap: wrap;
     .adItem: {
         width: 25%;
+    }
+}
+
+@media(max-width: 600px) {
+    margin: 10px;
+    .list .aditem {
+        width: 50%;
     }
 }
 `

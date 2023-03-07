@@ -19,7 +19,7 @@ type ErrorType = {
 
 function SignIn() {
 
-    const api = useApi()
+    const api = useApi
     const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
